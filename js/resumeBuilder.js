@@ -13,11 +13,7 @@ var name = "Muhire Kavuna";
 var formattedName = HTMLheaderName.replace("%data%", name);
 $("#header").prepend(formattedName);
 
-
-
-
-
-//update contacts 
+//update top contacts 
 
 var formatttedContactGeneric = HTMLcontactGeneric.replace("%contact%", "");
 formatttedContactGeneric = formatttedContactGeneric.replace("%data%", "");
@@ -33,10 +29,21 @@ var email = "email@email.com";
 var formattedEmail = HTMLemail.replace("%data%", email);
 $("#topContacts").append(formattedEmail);
 
-//add email 
-var email = "email@email.com";
-var formattedEmail = HTMLemail.replace("%data%", email);
-$("#topContacts").append(formattedEmail);
+//add twitter
+var twiiter = "@mkavuna";
+var formattedTwitter = HTMLtwitter.replace("%data%", twiiter);
+$("#topContacts").append(formattedTwitter);
+
+
+//add github
+var github = "gmkavuna";
+var formattedGithub = HTMLgithub.replace("%data%", github);
+$("#topContacts").append(formattedGithub);
+
+//add location
+var loc = "Dayton, OH";
+var formattedLocation = HTMLlocation.replace("%data%", loc);
+$("#topContacts").append(formattedLocation);
 
 /*
 var HTMLcontactGeneric = "<li class='flex-item'><span class='orange-text'>%contact%</span><span class='white-text'>%data%</span></li>";
@@ -198,9 +205,95 @@ for (schools in education.schools){
 	
 }
 
+//project 
+var projects = {
+		"proj": [
+			{
+				"title" : "Euereka", 
+				"description" : "Euereka is a social media which lets users save their learning and share it with others",
+				"dates" : "2014",
+				"image" : "images/projects/eureka.png",
+			},
+			{
+				"title" : "Hygebat Ltd website development", 
+				"description" : "Official website for Hygebat Ltd, one of the top construction companies in Rwanda.",
+				"dates" : "2013",
+				"image" : "images/projects/hygebat.png",
+			},
+			{
+				"title" : "La Corniche motel website development", 
+				"description" : "La Corniche site redeveloped",
+				"dates" : "2013",
+				"image" : "images/projects/lacorniche.png",
+			}
+		
+		]
+}
+
+//start the project section 
+$("#projects").append(HTMLprojectStart);
+for (index in projects.proj){
+	
+	//first get the title
+	var title = projects.proj[index].title; 
+	var formattedTitle = HTMLprojectTitle.replace("%data%", title);
+	$(".project-entry:last").append(formattedTitle);
+	
+	//pull dates
+	var dates = projects.proj[index].dates; 
+	var formattedDates = HTMLprojectDates.replace("%data%", dates);
+	$(".project-entry:last").append(formattedDates);
+	
+	//pull descriptions
+	var desc = projects.proj[index].description; 
+	var formattedDesc = HTMLprojectDescription.replace("%data%", desc);
+	$(".project-entry:last").append(formattedDesc);
+	
+	//pull the images
+	var image = projects.proj[index].image; 
+	var formattedImage = HTMLprojectImage.replace("%data%", image);
+	$(".project-entry:last").append(formattedImage);
+	
+	
+}
+
 //adding the map
 
 $("#mapDiv").append(googleMap);
+
+
+//update bottom contacts 
+//update top contacts 
+
+var formatttedContactGeneric = HTMLcontactGeneric.replace("%contact%", "");
+formatttedContactGeneric = formatttedContactGeneric.replace("%data%", "");
+$("#footerContacts").append(formatttedContactGeneric);
+
+//add mobile 
+var mobile = "555-555-5555";
+var formattedMobile = HTMLmobile.replace("%data%", mobile);
+$("#footerContacts").append(formattedMobile);
+
+//add email 
+var email = "email@email.com";
+var formattedEmail = HTMLemail.replace("%data%", email);
+$("#footerContacts").append(formattedEmail);
+
+//add twitter
+var twiiter = "@mkavuna";
+var formattedTwitter = HTMLtwitter.replace("%data%", twiiter);
+$("#footerContacts").append(formattedTwitter);
+
+
+//add github
+var github = "gmkavuna";
+var formattedGithub = HTMLgithub.replace("%data%", github);
+$("#footerContacts").append(formattedGithub);
+
+//add location
+var loc = "Dayton, OH";
+var formattedLocation = HTMLlocation.replace("%data%", loc);
+$("#footerContacts").append(formattedLocation);
 
 
 /*		  
